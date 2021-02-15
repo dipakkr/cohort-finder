@@ -1,6 +1,4 @@
 import React from 'react';
-import tailwindlogo from './tailwind-css-logo.svg';
-import reactlogo from './react-logo.png';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Home } from './pages/Home';
 import { Search } from './pages/Search';
