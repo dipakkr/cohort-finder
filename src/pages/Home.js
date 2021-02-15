@@ -5,7 +5,11 @@ export const Home = () => {
     return(
         <>  
             <Hero/>
-            <Featured/>
+
+            <Featured heading="Trending Cohorts"/>
+
+            <Featured heading="Featured Cohorts"/>
+
         </>
     ); 
 }

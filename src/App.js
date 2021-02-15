@@ -5,6 +5,8 @@ import { Search } from './pages/Search';
 import { CohortDetail } from './pages/CohortDetail';
 import { Navbar } from './components/Navbar.js';
 import { Footer } from './components/Footer';
+import { Login } from './pages/Admin/Login';
+import { Featured } from './components/Featured';
 
 const App = () => {
     return (
@@ -15,7 +17,13 @@ const App = () => {
 
                 <Route exact path="/find" component={Search} />
 
+                <Route exact path="/featured" component={Featured} />
+
+
                 <Route exact path="/cohort/:id" component={CohortDetail} />
+
+                <Route exact path="/admin/login" component={Login} />
+
             </Switch>
             <Footer />
         </Router>
