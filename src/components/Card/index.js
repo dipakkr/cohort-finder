@@ -1,18 +1,22 @@
 import { Link } from 'react-router-dom';
 
-export const Card = () => {
+export const Card = (props) => {
+
+    // get data 
+    const {data} = props;
+
     return (
         <div class="p-4 md:w-1/3">
             <Link to="/cohort/13">
                 <div class="h-full border-2 border-gray-800 rounded-lg overflow-hidden">
                     <img
                         class="lg:h-48 md:h-36 w-full object-cover object-center"
-                        src="https://dummyimage.com/720x400"
+                        src={data.profile_img}
                         alt="blog"
                     />
                     <div class="p-6">
                         <h1 class="title-font text-lg font-medium text-white mb-1">
-                            The Catalyzer
+                            {data.name}
                         </h1>
 
                         <h3 class="text-xs title-font font-medium text-gray-500 mb-1">
