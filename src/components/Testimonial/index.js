@@ -2,6 +2,9 @@ export const Testimonial = () => {
     return (
         <section class="text-gray-400 bg-gray-900 body-font">
             <div class="container px-5 py-24 mx-auto">
+                <h1 class="sm:text-3xl text-4xl font-medium title-font mb-20 text-white text-center">
+                    Testimonial
+                </h1>
                 <div class="flex flex-wrap -m-4">
                     <div class="lg:w-1/3 lg:mb-0 mb-6 p-4">
                         <div class="h-full text-center">

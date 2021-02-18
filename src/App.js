@@ -7,6 +7,8 @@ import { Navbar } from './components/Navbar.js';
 import { Footer } from './components/Footer';
 import { Login } from './pages/Admin/Login';
 import { Featured } from './components/Featured';
+import { Dashboard } from './components/Dashboard';
+import { Upload } from './components/Dashboard/Upload';
 
 const App = () => {
     return (
@@ -23,6 +25,12 @@ const App = () => {
                 <Route exact path="/cohort/:id" component={CohortDetail} />
 
                 <Route exact path="/admin/login" component={Login} />
+
+                <Route exact path="/dash" component={Dashboard} />
+
+                {/** Dashboards routes */}
+                <Route exact path="/dashboard/upload" component={Upload} />
+
 
             </Switch>
             <Footer />
