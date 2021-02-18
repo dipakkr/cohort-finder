@@ -25,7 +25,6 @@ export const Card = (props) => {
 
                         <p class="leading-relaxed mb-3 mt-2">
                             Photo booth fam kinfolk cold-pressed sriracha
-                            leggings jianbing microdosing tousled waistcoat.
                         </p>
                         <div class="flex items-center flex-wrap ">
                             <Link
