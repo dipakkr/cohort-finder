@@ -1,3 +1,6 @@
+import axios from 'axios';
+import { config } from '../config';
+
 export const CohortList = [
     {
         name: 'Newton School',
@@ -48,3 +51,32 @@ export const CohortList = [
         'admin_id:': '122'
     }
 ];
+
+export const addCohort = async (payload) => {
+    const URL = config.BASE_API_URL + '/api/project/add';
+
+    try {
+        const res = await axios.post(URL, payload);
+
+        if (!res.data.error) {
+            return true;
+        }
+    } catch (err) {
+        return false;
+    }
+};
+
+
+export const getAllCohort = async () => {
+    const URL = config.BASE_API_URL + '/api/project/add';
+
+    try {
+        const res = await axios.post(URL);
+
+        if (!res.data.error) {
+            return true;
+        }
+    } catch (err) {
+        return false;
+    }
+}
