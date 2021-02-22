@@ -23,3 +23,25 @@ List education cohorts and generate lead
     "location": "",
     "token": "128ABBFA57A424C3DB724554FC3FC"
 }
+
+## LEAD API Schema
+
+name : values.name,
+email : values.email,
+cohort_name : 'cohort name', // props.cohort.cohort_name
+organisation : 'organisation name', //props.cohort.org
+cohort_id : 'cohort id' // props.cohort id
+is_processed : 
+status  : 
+
+## Dashboard View
+
+customer name
+customer email
+
+cohort_id
+cohort_email
+
+createdDate
+
+status

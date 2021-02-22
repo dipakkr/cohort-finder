@@ -13,7 +13,7 @@ export const CohortTop = (props) => {
                         authentic tumeric truffaut hexagon try-hard chambray.
                     </p>
                     <div class="flex justify-start">
-                        <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+                        <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg" onClick={()=> props.handleClick('cta')}>
                             Learn more
                         </button>
                         <p className="text-xs p-2 w-1/2">

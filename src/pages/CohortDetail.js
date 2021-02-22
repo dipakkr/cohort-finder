@@ -1,15 +1,33 @@
-import { CohortTop } from "../components/CohortTop"
-import { CourseModule } from "../components/CourseModule"
-import { Testimonial } from "../components/Testimonial"
+import { useState } from 'react';
+import { CohortTop } from '../components/CohortTop';
+import { CourseModule } from '../components/CourseModule';
+import { Popup } from '../components/Popup';
+import { Testimonial } from '../components/Testimonial';
 
 export const CohortDetail = (props) => {
-    return(
-        <>  
-            <CohortTop id={props.match.params.id}/>
-        
-            <CourseModule/>
+    const [isPopupVisible, setIsPopupVisible] = useState(false);
 
-            <Testimonial/>
-         </>
-    ); 
-}
+    const handleClick = (params) => {
+        if (params === 'cta') {
+            setIsPopupVisible((value) => !value);
+        }
+    };
+
+    const handlePopupClose = () => {
+        setIsPopupVisible(false);
+    }
+
+    return (
+        <>
+            <CohortTop id={props.match.params.id} handleClick={handleClick} />
+
+            <CourseModule />
+
+            <Testimonial />
+
+            {isPopupVisible ? <Popup handleClose={handlePopupClose} /> : ''}
+
+            {/* */}
+        </>
+    );
+};

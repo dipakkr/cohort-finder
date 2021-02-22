@@ -10,7 +10,7 @@ export const Dashboard = () => {
                 <div class="flex flex-wrap -m-4 text-center">
                     <AdminControlLink
                         name={'View all applications'}
-                        link={'/dashboard/all'}
+                        link={'/dashboard/leads'}
                     />
 
                     <AdminControlLink

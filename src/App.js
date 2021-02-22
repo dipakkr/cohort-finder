@@ -9,6 +9,7 @@ import { Login } from './pages/Admin/Login';
 import { Featured } from './components/Featured';
 import { Dashboard } from './components/Dashboard';
 import { Upload } from './components/Dashboard/Upload';
+import { ViewAllLead } from './components/Dashboard/ViewAllLead';
 
 const App = () => {
     return (
@@ -30,6 +31,9 @@ const App = () => {
 
                 {/** Dashboards routes */}
                 <Route exact path="/dashboard/upload" component={Upload} />
+
+                <Route exact path="/dashboard/leads" component={ViewAllLead} />
+
 
 
             </Switch>
