@@ -24,8 +24,6 @@ export const Upload = () => {
     const handleFormSubmit = async (e) => {
         e.preventDefault();
 
-        console.log(values);
-
         const res = await addCohort(values);
         if(res){
             swal('Upload Success', '', 'success');
