@@ -10,8 +10,7 @@ export const CohortList = [
         end_date: '',
         cohort_status: '1',
         tags: ['full stack development', 'react', 'nodejs'],
-        profile_img:
-            'https://cdn.hashnode.com/res/hashnode/image/upload/v1613412273324/AIlgpntcQ.png',
+        profile_image:'',
         'admin_id:': '123'
     },
     {
@@ -22,8 +21,8 @@ export const CohortList = [
         end_date: '',
         cohort_status: '1',
         tags: ['design', 'ui', 'ux'],
-        profile_img:
-            'https://cdn.hashnode.com/res/hashnode/image/upload/v1613412366246/rXb2hHWd_.png',
+        profile_image:'',
+
         'admin_id:': '122'
     },
     {
@@ -34,8 +33,8 @@ export const CohortList = [
         end_date: '',
         cohort_status: '1',
         tags: ['design', 'ui', 'ux'],
-        profile_img:
-            'https://cdn.hashnode.com/res/hashnode/image/upload/v1613412366246/rXb2hHWd_.png',
+        profile_image:'',
+
         'admin_id:': '122'
     },
     {
@@ -68,15 +67,16 @@ export const addCohort = async (payload) => {
 
 
 export const getAllCohort = async () => {
-    const URL = config.BASE_API_URL + '/api/project/add';
+    const URL = config.BASE_API_URL + '/api/project/all';
 
     try {
-        const res = await axios.post(URL);
+        const res = await axios.get(URL);
 
-        if (!res.data.error) {
-            return true;
+        if(res.data && res.data.projects.length > 0){
+            return res.data.projects;
         }
+
     } catch (err) {
-        return false;
+        return [];
     }
 }

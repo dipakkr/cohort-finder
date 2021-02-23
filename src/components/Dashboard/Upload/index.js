@@ -105,21 +105,7 @@ export const Upload = () => {
                                 value={values.is_featured}
                             />
 
-                            <Input
-                                label="Profile Image"
-                                name="profile_image"
-                                type="text"
-                                value={values.profile_image}
-                                handleChange={handleChange}
-                            />
-
-                            <Input
-                                label="Video Url"
-                                name="video_url"
-                                type="text"
-                                value={values.video_url}
-                                handleChange={handleChange}
-                            />
+                            
 
                             <Input
                                 label="Tags"
@@ -166,8 +152,35 @@ export const Upload = () => {
                                 handleChange={handleChange}
                             />
 
+                              <Input
+                                label="Domain"
+                                name="domain"
+                                type="text"
+                                width="1/2"
+                                value={values.domain}
+                                handleChange={handleChange}
+                            />
+
+
                             <Input
-                                label="Token"
+                                label="Profile Image"
+                                name="profile_image"
+                                type="text"
+                                value={values.profile_image}
+                                handleChange={handleChange}
+                            />
+
+                            <Input
+                                label="Video Url"
+                                name="video_url"
+                                type="text"
+                                value={values.video_url}
+                                handleChange={handleChange}
+                            />
+
+
+                            <Input
+                                label="Access Token**"
                                 name="token"
                                 type="text"
                                 value={values.status}

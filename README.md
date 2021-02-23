@@ -32,7 +32,6 @@ cohort_name : 'cohort name', // props.cohort.cohort_name
 organisation : 'organisation name', //props.cohort.org
 cohort_id : 'cohort id' // props.cohort id
 is_processed : 
-status  : 
 
 ## Dashboard View
 
