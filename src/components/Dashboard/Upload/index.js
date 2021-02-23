@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Input } from '../../Fields/Input';
-import axios from 'axios';
 import swal from 'sweetalert';
 import { addCohort } from '../../../api/api';
 
