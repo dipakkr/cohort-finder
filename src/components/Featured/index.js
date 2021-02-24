@@ -16,7 +16,7 @@ export const Featured = (props) => {
 
 
     let allItems;
-    if (projects.length > 0) {
+    if (projects && projects.length > 0) {
         allItems = projects.map((item, index) => {
             return <Card data={item} key={index} />;
         });

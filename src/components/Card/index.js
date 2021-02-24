@@ -5,11 +5,11 @@ export const Card = (props) => {
     // get data
     const { data } = props;
 
-    console.log(data);
+    const cohort_slug = data.cohort_slug;
 
     return (
         <div class="p-4 md:w-1/3">
-            <Link to="/cohort/13">
+            <Link to={`/cohort/${cohort_slug}`}>
                 <div class="h-full border-2 border-gray-800 rounded-lg overflow-hidden">
                     
 

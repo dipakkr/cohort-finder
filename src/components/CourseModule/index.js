@@ -1,14 +1,14 @@
 export const CourseModule = () => {
     return (
-        <section class="text-gray-400 body-font bg-gray-900">
-            <div class="container px-5 py-5 mx-auto">
-                <div class="flex flex-wrap w-full mb-20 flex-col items-center text-center">
+        <section class="text-gray-400 body-font bg-gray-900 ">
+            <div class="container px-5  mx-auto ">
+                <div class="flex flex-wrap w-full mb-20 flex-col items-center text-center py-6">
                     <h1 class="sm:text-3xl text-4xl font-medium title-font mb-2 text-white">
                         Course Module
                     </h1>
                     <p class="lg:w-1/2 w-full leading-relaxed text-opacity-80"></p>
                 </div>
-                <div class="flex flex-wrap -m-4">
+                <div class="flex flex-wrap -m-2 ">
                     <div class="xl:w-1/3 md:w-1/2 p-4">
                         <div class="border border-gray-700 border-opacity-75 p-6 rounded-lg">
                             <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-gray-800 text-indigo-400 mb-4">

@@ -23,7 +23,7 @@ const App = () => {
                 <Route exact path="/featured" component={Featured} />
 
 
-                <Route exact path="/cohort/:id" component={CohortDetail} />
+                <Route exact path="/cohort/:id" component={CohortDetail}  />
 
                 <Route exact path="/admin/login" component={Login} />
 

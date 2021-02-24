@@ -22,7 +22,6 @@ export const CohortList = [
         cohort_status: '1',
         tags: ['design', 'ui', 'ux'],
         profile_image:'',
-
         'admin_id:': '122'
     },
     {
@@ -34,7 +33,6 @@ export const CohortList = [
         cohort_status: '1',
         tags: ['design', 'ui', 'ux'],
         profile_image:'',
-
         'admin_id:': '122'
     },
     {
@@ -77,6 +75,21 @@ export const getAllCohort = async () => {
         }
 
     } catch (err) {
+        return [];
+    }
+}
+
+export const getSingleProject = async (slug) => {
+
+    const URL = config.BASE_API_URL + '/api/project/single/' + slug;
+
+    try{
+        const res = await axios.get(URL);
+
+        if(res.data && !res.error){
+            return res.data.project;
+        }
+    }catch(err){
         return [];
     }
 }
