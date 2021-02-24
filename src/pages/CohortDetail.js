@@ -42,7 +42,7 @@ export const CohortDetail = (props) => {
 
                 <Testimonial />
 
-                {isPopupVisible ? <Popup handleClose={handlePopupClose} /> : ''}
+                {isPopupVisible ? <Popup handleClose={handlePopupClose}  payload={cohortData}/> : ''}
 
                 {/* */}
             </>

@@ -93,3 +93,19 @@ export const getSingleProject = async (slug) => {
         return [];
     }
 }
+
+
+export const saveLead = async (payload) => {
+
+    const URL = config.BASE_API_URL + '/api/lead/save';
+
+    try{
+        const res = await axios.post(URL, payload);
+
+        if(res.data && res.data.error == false){
+            return true;
+        }
+    }catch(err){
+        return false;
+    }
+}

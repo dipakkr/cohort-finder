@@ -1,10 +1,14 @@
 import { useEffect, useState } from 'react';
 import { Input } from '../Fields/Input';
 import swal from 'sweetalert';
+import { saveLead } from '../../api/api';
 
 export const Popup = (props) => {
 
     const [isLeadSuccess, setIsLeadSuccess] = useState(false);
+    const [cohortData] = useState(props.payload);
+
+
 
     const [values, setValues] = useState({
         name: '',
@@ -18,38 +22,36 @@ export const Popup = (props) => {
         }));
     };
 
-    const handleFormSubmit = (e) => {
+    const handleFormSubmit = async (e) => {
         e.preventDefault();
 
         // call the LEAD API
 
         const payload = {
-            name : values.name,
-            email : values.email,
-            cohort_name : 'cohort name', // props.cohort.cohort_name
-            organisation : 'organisation name', //props.cohort.org
-            cohort_id : 'cohort id' // props.cohort id
+            username : values.name,
+            user_email : values.email,
+            cohort_name : cohortData[0].cohort_name, // props.cohort.cohort_name
+            organisation : cohortData[0].organisation, //props.cohort.org
+            cohort_id : cohortData[0]._id
+        };
+
+        const isSuccess = await saveLead(payload);
+        console.log(isSuccess);
+
+        if(isSuccess){
+            props.handleClose();
+            swal('Upload Success', '', 'success');
+        }else{
+            swal('Upload Failed', '', 'error');
         }
 
-        console.log(payload);
-
-        setIsLeadSuccess(true);
-
-
-        // const res = await addCohort(values);
-        // if(res){
-        //     swal('Upload Success', '', 'success');
-        // }else{
-        //     swal('Upload Failed', '', 'error');
-
-        // }
     };
 
     // handle Succe
     useEffect(()=>{
         if(isLeadSuccess){
             props.handleClose();
-                        swal('Upload Success', '', 'success');
+            swal('Upload Success', '', 'success');
 
         }
     }, [props, isLeadSuccess])
