@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { config } from '../config';
+import { getBodyPayload } from '../utils/utils';
 
 export const CohortList = [
     {
@@ -109,11 +110,13 @@ export const addCohort = async (payload) => {
     }
 };
 
-export const getAllCohort = async () => {
-    const URL = config.BASE_API_URL + '/api/project/all';
+export const getAllCohort = async (data) => {
+    const URL = config.BASE_API_URL + '/api/project/filter';
+
+    const bodyPayload = getBodyPayload(data);
 
     try {
-        const res = await axios.get(URL);
+        const res = await axios.post(URL, bodyPayload);
 
         if (res.data && res.data.projects.length > 0) {
             return res.data.projects;

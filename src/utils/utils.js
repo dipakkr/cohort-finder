@@ -5,7 +5,19 @@ export const createslug = (name) => {
         slug = name.replace(' ', '-');
         return slug.toLowerCase();
     }
+    return ''  
+}
 
-    return ''
-  
+export const getBodyPayload = (data) => {
+
+    let payload = {};
+
+    if(data === 'featured'){
+        payload['is_featured'] = '1'
+    }else{
+        payload['domain'] = data;
+    }
+
+    return payload;
+
 }

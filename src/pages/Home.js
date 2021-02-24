@@ -6,9 +6,15 @@ export const Home = () => {
         <>  
             <Hero/>
 
-            <Featured heading="Trending Cohorts"/>
+            <Featured heading="Featured Cohorts" domain="featured" limit="3"/>
 
-            <Featured heading="Featured Cohorts"/>
+            <Featured heading="Coding Cohorts" domain="Software Development" limit="3" />
+
+            <Featured heading="Design Cohorts" domain="Design" limit="3"/>
+
+            <Featured heading="Entrepreneurship Cohorts" domain="Entrepreneurship" limit="3" />
+
+
 
         </>
     ); 

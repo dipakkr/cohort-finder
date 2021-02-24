@@ -102,6 +102,7 @@ const SingleLeadRow = (props) => {
                     <div class="flex-shrink-0 h-10 w-10">
                         <img
                             class="h-10 w-10 rounded-full bg-gray-300"
+                            alt=" thumnail"
                             src="https://cdn.hashnode.com/res/hashnode/image/upload/v1614191721063/njouru9ia.png"
                         />
                     </div>
