@@ -109,3 +109,36 @@ export const saveLead = async (payload) => {
         return false;
     }
 }
+
+export const viewAllLeads = async () => {
+
+    const URL = config.BASE_API_URL + '/api/lead/view';
+
+    try{
+        const res = await axios.get(URL);
+
+        if(res.data && res.data.error == false){
+            return res.data.leads;
+        }
+    }catch(err){
+        return [];
+    }
+}
+
+export const processLead = async (id) => {
+
+    const URL = config.BASE_API_URL + '/api/lead/update';
+
+    const payload = {"lead_id" : id};
+
+    try{
+        const res = await axios.post(URL, payload);
+
+        if(res.data && res.data.error == false){
+            return true;
+        }
+    }catch(err){
+        return false;
+    }
+    
+}
