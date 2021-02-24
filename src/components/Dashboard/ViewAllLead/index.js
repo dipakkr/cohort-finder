@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import { processLead, viewAllLeads } from '../../../api/api';
+import { DummyLeadList, processLead, viewAllLeads } from '../../../api/api';
 
 export const ViewAllLead = (props) => {
-    const [leads, setLeads] = useState([]);
+    const [leads, setLeads] = useState(DummyLeadList);
     const [isProcessed, setisProcessed] = useState(false);
 
     const getLeadsData = async () => {
@@ -42,9 +42,9 @@ export const ViewAllLead = (props) => {
     };
 
     return (
-        <div class="flex flex-col bg-gray-900 p-24 ">
-            <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-                <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+        <div class=" flex flex-col bg-gray-900 ">
+            <div class="container px-5 py-10 mx-auto -my-2 overflow-x-auto">
+                <div class="py-2 align-middle inline-block min-w-full ">
                     <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg ">
                         <h2 class="title-font font-medium text-3xl  text-white mb-10">
                             View all Applications
@@ -73,10 +73,13 @@ export const ViewAllLead = (props) => {
                                         class="px-6 py-3 text-left text font-medium text-white-500 uppercase tracking-wider">
                                         Role
                                     </th>
+                                    <th
+                                        scope="col"
+                                        class="px-6 py-3 text-left text font-medium text-white-500 uppercase tracking-wider">
+                                        Date
+                                    </th>
                                     <th scope="col" class="relative px-6 py-3">
-                                        <span class="sr-only">
-                                            Send to Admin
-                                        </span>
+                                            Action
                                     </th>
                                 </tr>
                             </thead>
@@ -94,20 +97,19 @@ export const ViewAllLead = (props) => {
 const SingleLeadRow = (props) => {
     return (
         <tr className="bg-white-900">
-            <td class="px-6 py-4 whitespace-nowrap ">
+            <td class="px-6 py-6 whitespace-nowrap ">
                 <div class="flex items-center">
                     <div class="flex-shrink-0 h-10 w-10">
                         <img
-                            class="h-10 w-10 rounded-full"
-                            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=4&amp;w=256&amp;h=256&amp;q=60"
-                            alt=""
+                            class="h-10 w-10 rounded-full bg-gray-300"
+                            src="https://cdn.hashnode.com/res/hashnode/image/upload/v1614191721063/njouru9ia.png"
                         />
                     </div>
                     <div class="ml-4">
-                        <div class="text-sm font-medium text-white-900">
+                        <div class="text-lg	 font-medium font-semibold	 text-white-900">
                             {props.payload.username}
                         </div>
-                        <div class="text-sm text-white-500">
+                        <div class="text text-white-500">
                             {props.payload.user_email}
                         </div>
                     </div>
@@ -131,6 +133,9 @@ const SingleLeadRow = (props) => {
             </td>
             <td class="px-6 py-4 whitespace-nowrap text-sm text-white-500">
                 User
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap text-sm text-white-500">
+                {props.payload.createdAt.split('T')[0]}
             </td>
             <td
                 class={`px-6 py-4 whitespace-nowrap text-right text-sm   font-medium ${props.payload.is_processed === "0" ? 'cursor-pointer' : ''}  `}

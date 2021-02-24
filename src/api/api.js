@@ -10,7 +10,7 @@ export const CohortList = [
         end_date: '',
         cohort_status: '1',
         tags: ['full stack development', 'react', 'nodejs'],
-        profile_image:'',
+        profile_image: '',
         'admin_id:': '123'
     },
     {
@@ -21,7 +21,7 @@ export const CohortList = [
         end_date: '',
         cohort_status: '1',
         tags: ['design', 'ui', 'ux'],
-        profile_image:'',
+        profile_image: '',
         'admin_id:': '122'
     },
     {
@@ -32,7 +32,7 @@ export const CohortList = [
         end_date: '',
         cohort_status: '1',
         tags: ['design', 'ui', 'ux'],
-        profile_image:'',
+        profile_image: '',
         'admin_id:': '122'
     },
     {
@@ -49,6 +49,52 @@ export const CohortList = [
     }
 ];
 
+export const DummyLeadList = [
+    {
+        is_processed: '-',
+        _id: '60362d1f7330bb001c4564b4',
+        username: '-',
+        cohort_name: '-',
+        organisation: '-',
+        cohort_id: '-',
+        createdAt: '-',
+    },
+    {
+        is_processed: '-',
+        _id: '60362d1f7330bb001c4564b4',
+        username: '-',
+        cohort_name: '-',
+        organisation: '-',
+        cohort_id: '-',
+        createdAt: '-',
+    },  {
+        is_processed: '-',
+        _id: '60362d1f7330bb001c4564b4',
+        username: '-',
+        cohort_name: '-',
+        organisation: '-',
+        cohort_id: '-',
+        createdAt: '-',
+    },  {
+        is_processed: '-',
+        _id: '60362d1f7330bb001c4564b4',
+        username: '-',
+        cohort_name: '-',
+        organisation: '-',
+        cohort_id: '-',
+        createdAt: '-',
+    },  {
+        is_processed: '-',
+        _id: '60362d1f7330bb001c4564b4',
+        username: '-',
+        cohort_name: '-',
+        organisation: '-',
+        cohort_id: '-',
+        createdAt: '-',
+    },
+   
+];
+
 export const addCohort = async (payload) => {
     const URL = config.BASE_API_URL + '/api/project/add';
 
@@ -63,82 +109,74 @@ export const addCohort = async (payload) => {
     }
 };
 
-
 export const getAllCohort = async () => {
     const URL = config.BASE_API_URL + '/api/project/all';
 
     try {
         const res = await axios.get(URL);
 
-        if(res.data && res.data.projects.length > 0){
+        if (res.data && res.data.projects.length > 0) {
             return res.data.projects;
         }
-
     } catch (err) {
         return [];
     }
-}
+};
 
 export const getSingleProject = async (slug) => {
-
     const URL = config.BASE_API_URL + '/api/project/single/' + slug;
 
-    try{
+    try {
         const res = await axios.get(URL);
 
-        if(res.data && !res.error){
+        if (res.data && !res.error) {
             return res.data.project;
         }
-    }catch(err){
+    } catch (err) {
         return [];
     }
-}
-
+};
 
 export const saveLead = async (payload) => {
-
     const URL = config.BASE_API_URL + '/api/lead/save';
 
-    try{
+    try {
         const res = await axios.post(URL, payload);
 
-        if(res.data && res.data.error === false){
+        if (res.data && res.data.error === false) {
             return true;
         }
-    }catch(err){
+    } catch (err) {
         return false;
     }
-}
+};
 
 export const viewAllLeads = async () => {
-
     const URL = config.BASE_API_URL + '/api/lead/view';
 
-    try{
+    try {
         const res = await axios.get(URL);
 
-        if(res.data && res.data.error === false){
+        if (res.data && res.data.error === false) {
             return res.data.leads;
         }
-    }catch(err){
+    } catch (err) {
         return [];
     }
-}
+};
 
 export const processLead = async (id) => {
-
     const URL = config.BASE_API_URL + '/api/lead/update';
 
-    const payload = {"lead_id" : id};
+    const payload = { lead_id: id };
 
-    try{
+    try {
         const res = await axios.post(URL, payload);
 
-        if(res.data && res.data.error === false){
+        if (res.data && res.data.error === false) {
             return true;
         }
-    }catch(err){
+    } catch (err) {
         return false;
     }
-    
-}
+};
