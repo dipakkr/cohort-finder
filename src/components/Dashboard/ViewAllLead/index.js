@@ -122,9 +122,9 @@ const SingleLeadRow = (props) => {
             <td class="px-6 py-4 whitespace-nowrap">
                 <span
                     class={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-${
-                        props.payload.is_processed == 0 ? 'red' : 'green'
+                        props.payload.is_processed === "0" ? 'red' : 'green'
                     }-100 text-white-800`}>
-                    {props.payload.is_processed == 0
+                    {props.payload.is_processed === "0"
                         ? 'Not Processed'
                         : 'Processed'}
                 </span>
@@ -133,14 +133,14 @@ const SingleLeadRow = (props) => {
                 User
             </td>
             <td
-                class={`px-6 py-4 whitespace-nowrap text-right text-sm   font-medium ${props.payload.is_processed == 0 ? 'cursor-pointer' : ''}  `}
+                class={`px-6 py-4 whitespace-nowrap text-right text-sm   font-medium ${props.payload.is_processed === "0" ? 'cursor-pointer' : ''}  `}
                 onClick={() => props.updateLead(props.payload._id)}>
                 <span
                     className={`rounded-full p-2 bg-${
-                        props.payload.is_processed == 0 ? '' : 'green'
+                        props.payload.is_processed === "0" ? '' : 'green'
                     }-100 text-white-800`}>
                     {' '}
-                    {props.payload.is_processed == 0
+                    {props.payload.is_processed === "0"
                         ? 'Share Lead'
                         : 'Lead Shared'}{' '}
                 </span>

@@ -102,7 +102,7 @@ export const saveLead = async (payload) => {
     try{
         const res = await axios.post(URL, payload);
 
-        if(res.data && res.data.error == false){
+        if(res.data && res.data.error === false){
             return true;
         }
     }catch(err){
@@ -117,7 +117,7 @@ export const viewAllLeads = async () => {
     try{
         const res = await axios.get(URL);
 
-        if(res.data && res.data.error == false){
+        if(res.data && res.data.error === false){
             return res.data.leads;
         }
     }catch(err){
@@ -134,7 +134,7 @@ export const processLead = async (id) => {
     try{
         const res = await axios.post(URL, payload);
 
-        if(res.data && res.data.error == false){
+        if(res.data && res.data.error === false){
             return true;
         }
     }catch(err){

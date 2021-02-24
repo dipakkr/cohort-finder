@@ -9,7 +9,6 @@ export const Popup = (props) => {
     const [cohortData] = useState(props.payload);
 
 
-
     const [values, setValues] = useState({
         name: '',
         email: ''
