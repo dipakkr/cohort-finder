@@ -31,7 +31,7 @@ export const Card = (props) => {
                             {data.cohort_name}
                         </h1>
 
-                        <h3 class="text-xs title-font font-medium text-gray-500 mb-1">
+                        <h3 class="text-xs title-font font-medium text-black w-1/2 md:w-1/3  text-center mb-1 p-1 rounded bg-yellow-300 ">
                             {data.domain ? data.domain : 'Live Course'}
                         </h3>
 
@@ -39,7 +39,7 @@ export const Card = (props) => {
                         <div class="flex items-center flex-wrap ">
                             <Link
                                 class="text-indigo-400 inline-flex items-center md:mb-2 lg:mb-0"
-                                to="/cohort/13">
+                                to={`/cohort/${cohort_slug}`}>
                                 View More details
                                 <svg
                                     class="w-4 h-4 ml-2"

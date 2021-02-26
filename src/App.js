@@ -11,6 +11,7 @@ import { Upload } from './components/Dashboard/Upload';
 import { ViewAllLead } from './components/Dashboard/ViewAllLead';
 import { RequestListing } from './pages/RequestListing';
 import { FeaturedPage } from './pages/FeaturedPage';
+import { Analytics } from './pages/Admin/Analytics';
 
 const App = () => {
     return (
@@ -19,7 +20,7 @@ const App = () => {
             <Switch>
                 <Route exact path="/" component={Home} />
 
-                <Route exact path="/find" component={Search} />
+                <Route exact path="/explore" component={Search} />
 
                 <Route exact path="/featured" component={FeaturedPage} />
 
@@ -36,6 +37,10 @@ const App = () => {
                 <Route exact path="/dashboard/leads" component={ViewAllLead} />
 
                 <Route exact path="/request-listing" component={RequestListing} />
+
+            
+                <Route exact path="/dashboard/analytics" component={Analytics} />
+
 
 
             </Switch>

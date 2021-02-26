@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { DummyLeadList, processLead, viewAllLeads } from '../../../api/api';
+import { NotFound } from '../../NotFound';
 
 export const ViewAllLead = (props) => {
     const [leads, setLeads] = useState(DummyLeadList);
@@ -41,57 +42,62 @@ export const ViewAllLead = (props) => {
         return items;
     };
 
-    return (
-        <div class=" flex flex-col bg-gray-900 ">
-            <div class="container px-5 py-10 mx-auto -my-2 overflow-x-auto">
-                <div class="py-2 align-middle inline-block min-w-full ">
-                    <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg ">
-                        <h2 class="title-font font-medium text-3xl  text-white mb-10">
-                            View all Applications
-                        </h2>
-
-                        <table class="min-w-full divide-y divide-gray-200">
-                            <thead class="bg-white">
-                                <tr>
-                                    <th
-                                        scope="col"
-                                        class="px-6 py-3 text-left text font-medium text-white-500 uppercase tracking-wider">
-                                        UserData
-                                    </th>
-                                    <th
-                                        scope="col"
-                                        class="px-6 py-3 text-left text font-medium text-white-500 uppercase tracking-wider">
-                                        Cohort Name
-                                    </th>
-                                    <th
-                                        scope="col"
-                                        class="px-6 py-3 text-left text font-medium text-white-500 uppercase tracking-wider">
-                                        Status
-                                    </th>
-                                    <th
-                                        scope="col"
-                                        class="px-6 py-3 text-left text font-medium text-white-500 uppercase tracking-wider">
-                                        Role
-                                    </th>
-                                    <th
-                                        scope="col"
-                                        class="px-6 py-3 text-left text font-medium text-white-500 uppercase tracking-wider">
-                                        Date
-                                    </th>
-                                    <th scope="col" class="relative px-6 py-3">
-                                            Action
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody class="bg-white divide-y divide-white-100">
-                                {getLeadRows()}
-                            </tbody>
-                        </table>
+    if(props.location && props.location.search === '?token=dipakkr2021'){
+        return (
+            <div class=" flex flex-col bg-gray-900 ">
+                <div class="container px-5 py-10 mx-auto -my-2 overflow-x-auto">
+                    <div class="py-2 align-middle inline-block min-w-full ">
+                        <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg ">
+                            <h2 class="title-font font-medium text-3xl  text-white mb-10">
+                                View all Applications
+                            </h2>
+    
+                            <table class="min-w-full divide-y divide-gray-200">
+                                <thead class="bg-white">
+                                    <tr>
+                                        <th
+                                            scope="col"
+                                            class="px-6 py-3 text-left text font-medium text-white-500 uppercase tracking-wider">
+                                            UserData
+                                        </th>
+                                        <th
+                                            scope="col"
+                                            class="px-6 py-3 text-left text font-medium text-white-500 uppercase tracking-wider">
+                                            Cohort Name
+                                        </th>
+                                        <th
+                                            scope="col"
+                                            class="px-6 py-3 text-left text font-medium text-white-500 uppercase tracking-wider">
+                                            Status
+                                        </th>
+                                        <th
+                                            scope="col"
+                                            class="px-6 py-3 text-left text font-medium text-white-500 uppercase tracking-wider">
+                                            Role
+                                        </th>
+                                        <th
+                                            scope="col"
+                                            class="px-6 py-3 text-left text font-medium text-white-500 uppercase tracking-wider">
+                                            Date
+                                        </th>
+                                        <th scope="col" class="relative px-6 py-3">
+                                                Action
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-white divide-y divide-white-100">
+                                    {getLeadRows()}
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    );
+        );
+    }else{
+        return <NotFound message="You are not autorized to view this page"/>
+    }
+    
 };
 
 const SingleLeadRow = (props) => {

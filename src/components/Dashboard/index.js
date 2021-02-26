@@ -5,7 +5,7 @@ export const Dashboard = () => {
         <section class="text-gray-400 bg-gray-900 body-font">
             <div class="container px-5 py-10 mx-auto">
                 <h1 className="title-font sm:text-2xl w-full md:text-3xl text-2xl mb-8  text-white">
-                    Welcome Deepak !
+                    Admin Panel !
                 </h1>
                 <div class="flex flex-wrap -m-4 text-center">
                     <AdminControlLink
@@ -18,12 +18,14 @@ export const Dashboard = () => {
                         link={'/dashboard/upload'}
                     />
 
-                    <AdminControlLink
+                    {/* <AdminControlLink
                         name={'Pending Cohorts'}
                         link={'/dashboard/pending-cohorts'}
                     />
 
-                    <AdminControlLink
+                    */}
+
+                     <AdminControlLink
                         name={'Update Cohort'}
                         link={'/dashboard/update'}
                     />
