@@ -5,7 +5,7 @@ import { saveLead } from '../../api/api';
 
 export const Popup = (props) => {
 
-    const [isLeadSuccess, setIsLeadSuccess] = useState(false);
+    const [isLeadSuccess] = useState(false);
     const [cohortData] = useState(props.payload);
 
 
@@ -39,9 +39,9 @@ export const Popup = (props) => {
 
         if(isSuccess){
             props.handleClose();
-            swal('Upload Success', '', 'success');
+            swal('Success', '', 'success');
         }else{
-            swal('Upload Failed', '', 'error');
+            swal('Failed', '', 'error');
         }
 
     };
@@ -50,7 +50,7 @@ export const Popup = (props) => {
     useEffect(()=>{
         if(isLeadSuccess){
             props.handleClose();
-            swal('Upload Success', '', 'success');
+            swal('Success', '', 'success');
 
         }
     }, [props, isLeadSuccess])

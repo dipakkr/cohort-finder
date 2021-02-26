@@ -1,4 +1,5 @@
 export const Hero = () => {
+    
     return (
         <section class="text-gray-400 bg-gray-900 body-font">
             <div class="container mx-auto flex px-4  py-10 md:flex-row flex-col flex-col-reverse py-24	 items-center">
@@ -7,12 +8,12 @@ export const Hero = () => {
                         Learn from the best
                     </h1>
 
-                    <h3 className="title-font sm:text-4xl  md:text-2.3xl text-yellow-300 text-2xl mb-4 font-small text-white">
-                        Explore best learning cohorts on Internet{' '}
+                    <h3 className="title-font sm:text-3xl  md:text-2.3xl text-yellow-300 text-2xl mb-4 font-small text-white">
+                        A space to find best learning communities on Internet
                     </h3>
 
                     <p class="mb-8 leading-relaxed">
-                      Search from a variety on online learning groups, communities and cohorts
+                        Find the best online learning cohorts, workshops and communities. 
                     </p>
                     <div class="flex justify-center">
                         <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">

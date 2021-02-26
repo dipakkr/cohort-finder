@@ -1,14 +1,28 @@
-import {  useState } from 'react';
-import { CohortList } from '../api/api';
+import { useState, useEffect } from 'react';
+import { CohortList, getAllCohort } from '../api/api';
 import { Card } from '../components/Card';
 
 const excludeColumns = ['end_date', 'start_date'];
 
-export const Search = () => {
-
-
-    const [results, setData] = useState(CohortList);
+export const Search = (props) => {
+    const [results, setData] = useState([]);
     const [searchText, setSearchText] = useState('');
+
+    useEffect(() => {
+        (async () => {
+            const allProject = await getAllCohort();
+            setData(allProject);
+        })();
+    }, []);
+
+    useEffect(() => {
+        if (!searchText) {
+            (async () => {
+                const allProject = await getAllCohort();
+                setData(allProject);
+            })();
+        }
+    }, [searchText]);
 
     const handleSearch = (e) => {
         e.preventDefault();
@@ -40,7 +54,7 @@ export const Search = () => {
         allItems = results.map((item, index) => {
             return <Card key={index} data={item} />;
         });
-    }
+    } 
 
     return (
         <>
@@ -61,7 +75,7 @@ export const Search = () => {
 
                 <section class="text-gray-400 bg-gray-900 body-font">
                     <div class="container px-5 py-24 mx-auto">
-                        <div class="flex flex-wrap -m-4">{allItems}</div>
+                        <div class="flex flex-wrap -m-4"> {allItems !== undefined ? allItems : 'No match found'} </div>
                     </div>
                 </section>
             </div>

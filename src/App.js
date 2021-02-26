@@ -6,10 +6,11 @@ import { CohortDetail } from './pages/CohortDetail';
 import { Navbar } from './components/Navbar.js';
 import { Footer } from './components/Footer';
 import { Login } from './pages/Admin/Login';
-import { Featured } from './components/Featured';
 import { Dashboard } from './components/Dashboard';
 import { Upload } from './components/Dashboard/Upload';
 import { ViewAllLead } from './components/Dashboard/ViewAllLead';
+import { RequestListing } from './pages/RequestListing';
+import { FeaturedPage } from './pages/FeaturedPage';
 
 const App = () => {
     return (
@@ -20,7 +21,7 @@ const App = () => {
 
                 <Route exact path="/find" component={Search} />
 
-                <Route exact path="/featured" component={Featured} />
+                <Route exact path="/featured" component={FeaturedPage} />
 
 
                 <Route exact path="/cohort/:id" component={CohortDetail}  />
@@ -34,6 +35,7 @@ const App = () => {
 
                 <Route exact path="/dashboard/leads" component={ViewAllLead} />
 
+                <Route exact path="/request-listing" component={RequestListing} />
 
 
             </Switch>

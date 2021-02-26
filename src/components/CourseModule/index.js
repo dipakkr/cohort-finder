@@ -1,7 +1,7 @@
 export const CourseModule = () => {
     return (
         <section class="text-gray-400 body-font bg-gray-900 ">
-            <div class="container px-5  mx-auto ">
+            <div class="container px-24  mx-auto ">
                 <div class="flex flex-wrap w-full mb-10 flex-col items-center text-center py-6">
                     <h1 class="sm:text-3xl text-4xl font-medium title-font mb-2 text-white">
                         Course Module

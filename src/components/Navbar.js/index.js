@@ -33,8 +33,8 @@ export const Navbar = () => {
                     </Link>
                     <Link
                         class="mr-5 text-small text-gray-100 hover:text-gray"
-                        to="/dash">
-                        Dashboard
+                        to="/request-listing">
+                            List your Cohort
                     </Link>
                 </nav>
             </div>

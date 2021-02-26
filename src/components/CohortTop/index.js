@@ -21,10 +21,10 @@ export const CohortTop = (props) => {
                             Register Now
                         </button>
 
-                        <p className="text-xs p-2 w-full md:w-1/2 ">
+                        {/* <p className="text-xs p-2 w-full md:w-1/2 ">
                             Pre registrations for the February 2021 Cohort are
                             now open.
-                       </p>
+                       </p> */}
                       
                     </div>
                   
