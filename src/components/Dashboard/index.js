@@ -2,12 +2,12 @@ import { Link } from 'react-router-dom';
 
 export const Dashboard = () => {
     return (
-        <section class="text-gray-400 bg-gray-900 body-font">
+        <section class="text-gray-400 bg-gray-900 body-font ">
             <div class="container px-5 py-10 mx-auto">
                 <h1 className="title-font sm:text-2xl w-full md:text-3xl text-2xl mb-8  text-white">
                     Admin Panel !
                 </h1>
-                <div class="flex flex-wrap -m-4 text-center">
+                <div class="flex flex-wrap -m-4 text-center py-32 mb-24">
                     <AdminControlLink
                         name={'View all applications'}
                         link={'/dashboard/leads'}
